@@ -9,19 +9,11 @@ last-updated: 2020-10-30 5:55 PM
 
 <h1 class="mx-auto" style="font-family:Courgette;">{{ page.title }}</h1>
 
-Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Libero id faucibus nisl tincidunt eget. Cursus metus aliquam eleifend mi in nulla posuere sollicitudin. Duis convallis convallis tellus id interdum velit. Ultricies mi eget mauris pharetra et. Odio pellentesque diam volutpat commodo sed egestas. Eu mi bibendum neque egestas congue quisque. Augue lacus viverra vitae congue eu consequat ac felis donec. Ultrices vitae auctor eu augue ut lectus arcu. Eu consequat ac felis donec et. Sollicitudin aliquam ultrices sagittis orci a scelerisque purus semper eget.
+My current work involves three complementary research themes: (1) experimental design and data analytic methods to inform multi-stage decision making in health; (2) statistical modeling of complex longitudinal and survival data; and
+(3) statistical modeling of complex relational structures such as interaction networks. In the coming years, I will continue to design and apply novel statistical methodologies to make sense of complex longitudinal, survival, and relational datasets. This work will inform decision making in health by aiding in intervention evaluation and development. Outside of my research, I enjoy exploring Ann Arbor with my wife, our 2 year old, and our 2 beagles.  I *was* an avid soccer player and now trying to avoid injury while raising a kid.
+
+Prior to joining, I was a postdoctoral fellow in the [Department of
+Statistics at Harvard University](https://statistics.fas.harvard.edu).  My fellowship was in the [Statistical Reinforcement Learning Lab](http://people.seas.harvard.edu/~samurphy/lab/overview.html) under the supervision of [Susan Murphy](people.seas.harvard.edu/~samurphy/). I received my PhD in Statistics at the [University of Chicago](http://galton.uchicago.edu) under the supervision of [Peter McCullagh](http://galton.uchicago.edu/~pmcc/).
 
 
-*This is an example of code*
-```js
-<script>
-    $(document).ready(function() {
-        $(".toast").toast('show');
-    });
-</script>
-```
-
-Semper eget duis at tellus at urna condimentum. Elit scelerisque mauris pellentesque pulvinar pellentesque habitant. Suspendisse faucibus interdum posuere lorem ipsum dolor. Volutpat commodo sed egestas egestas fringilla phasellus faucibus. Maecenas accumsan lacus vel facilisis volutpat est velit egestas dui. Massa placerat duis ultricies lacus. Fermentum et sollicitudin ac orci phasellus egestas tellus. Placerat orci nulla pellentesque dignissim enim sit amet. Tellus mauris a diam maecenas sed enim. Tortor vitae purus faucibus ornare. Lectus quam id leo in vitae turpis massa. Porttitor eget dolor morbi non arcu risus quis varius. Felis eget nunc lobortis mattis aliquam. Integer vitae justo eget magna fermentum.
-
-Egestas congue quisque egestas diam in arcu cursus euismod quis. Ullamcorper eget nulla facilisi etiam dignissim diam. Nunc pulvinar sapien et ligula ullamcorper. Turpis in eu mi bibendum. Faucibus scelerisque eleifend donec pretium vulputate. Euismod lacinia at quis risus sed vulputate odio ut enim. Phasellus faucibus scelerisque eleifend donec pretium. Non enim praesent elementum facilisis leo vel fringilla est ullamcorper. Quis auctor elit sed vulputate. Eu mi bibendum neque egestas. Eu turpis egestas pretium aenean pharetra magna ac. Augue ut lectus arcu bibendum at. Urna condimentum mattis pellentesque id nibh tortor id aliquet lectus. Fermentum leo vel orci porta non pulvinar. Pellentesque eu tincidunt tortor aliquam nulla facilisi. Amet commodo nulla facilisi nullam vehicula ipsum a arcu.
 
