@@ -19,8 +19,8 @@ image_alt: A minimalistic jekyll theme for academic    # image description
 # =======================================#
 # -----------SITE SETTINGS---------------#
 #========================================#: 
-author: John Doe 
-profile_image: /assets/img/avatar/wdempsey.png #/assets/img/avatar/avatar.jpeg
+author: Walter Dempsey
+profile_image: /assets/img/avatar/wdempsey.jpg #/assets/img/avatar/avatar.jpeg
 occupation: 
 snippet:
 twitter: wdempsey
@@ -116,7 +116,7 @@ exclude:
 # -----JEKYLL SCHOLAR SETTINGS-----------#
 #========================================#
 scholar:
-  last_name: Dumbarton
+  last_name: Dempsey
   style: apa
   locale: en
   source: /_bibliography/
