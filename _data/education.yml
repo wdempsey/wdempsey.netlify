@@ -1,6 +1,20 @@
-- School: Princeton
-  Degree: 
-  Program: School of Public and International Affairs
-  Start Date: 
-  End Date: 
-  Icon: /assets/img/icons/2x/princeton-crop.png      # Make this icon small, think 30px/30px
+- School: University of Chicago
+  Degree: Ph.D.
+  Program: Department of Statistics
+  Start Date: 2010
+  End Date: 2015
+  Icon: /assets/img/icons/2x/UofC-crop.png      # Make this icon small, think 30px/30px
+
+- School: University of Michigan
+  Degree: Postdoctoral Research Fellow
+  Program: Department of Statistics
+  Start Date: 2015
+  End Date: 2017
+  Icon: /assets/img/icons/2x/umich-crop.png      # Make this icon small, think 30px/30px
+
+- School: Harvard University
+  Degree: Postdoctoral Research Fellow
+  Program: Department of Statistics
+  Start Date: 2017
+  End Date: 2019
+  Icon: /assets/img/icons/2x/harvard-crop.png      # Make this icon small, think 30px/30px

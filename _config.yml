@@ -1,4 +1,4 @@
-f# =======================================#
+# =======================================#
 # -----------DUMBARTON THEME-------------#
 # ----------------By: Tyler Butler-------#
 #-----------------https://tbutler.org----#
@@ -12,7 +12,7 @@ title: Dempsey Lab
 email: wdem@umich.edu
 description: Professor Walter Dempsey
 baseurl:                                       # the subpath of your site, e.g. /blog
-url: "https://dumbarton.netlify.app/"          # the base hostname & protocol for your site, e.g. http://example.com
+url: "https://wdempsey.netlify.app/"          # the base hostname & protocol for your site, e.g. http://example.com
 image: /assets/img/dumbarton.png               # used to generate site link preview
 image_alt: A minimalistic jekyll theme for academic    # image description
 
@@ -23,7 +23,7 @@ author: Walter Dempsey
 profile_image: /assets/img/avatar/wdempsey.jpg #/assets/img/avatar/avatar.jpeg
 occupation: 
 snippet:
-twitter: wdempsey
+twitter: walthdempsey
 github: wdempsey
 linkedin: walter-dempsey-88a82688
 stackoverflow:
@@ -116,7 +116,7 @@ exclude:
 # -----JEKYLL SCHOLAR SETTINGS-----------#
 #========================================#
 scholar:
-  last_name: Dempsey
+  last_name: Dumbarton
   style: apa
   locale: en
   source: /_bibliography/

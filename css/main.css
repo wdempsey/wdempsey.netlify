@@ -24,7 +24,7 @@ code {
 
 
 a.highlighted, a.highlighted:link {
-  color: black;
+  color: blue;
   text-decoration: none;
   background-position-y: -0%;
   background-image: linear-gradient( white 50%, gold 50%);
