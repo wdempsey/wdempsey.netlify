@@ -11,9 +11,9 @@
   url: teaching.html
   first: false
 
-- name: Projects
+- name: Lab Members
   id: projects
-  description: Test
+  description: A list of recent graduate students and postdoctoral research fellows.
   content: 
   url: projects.html
   first: false

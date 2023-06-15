@@ -1,47 +1,38 @@
-- name: Project 1
+- name: Hera Shi
   id: project1
   description: >
-    Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua.
-    Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. 
+    <b> Graduated, 2023. </b> Postdoctoral Research Fellow at the University of Cambridge with <a href="http://www.statslab.cam.ac.uk/~qz280/"> Qingyuan Zhao</a>.
+    Worked on statistical methods for time-varying treatment effects in the context of micro-randomized trials.
   date: true
   link: https://example.com
   image:  http://placehold.it/100x100
   tech: 
-    - python
 
 
-- name: Project 2
+- name: Yuhua Zhang
   id: project2
   description: >
-    Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua.
-    Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat.   
+    <b> Graduated, 2023. </b> Postdoctoral Research Fellow at Harvard University with <a href="https://www.hsph.harvard.edu/onnela-lab/"> Jukka-Pekka Onnela</a>.
+    Worked on statistical methods for network data.
   date: true
   link: https://example.com
   image: http://placehold.it/100x100
   tech: 
-    - c++
 
-- name: Project 3
+- name: Madeline Abbott
   id: project3
   description: >
-    Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua.
-    Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat.   
+    PhD Student. Working on statistical methods for intensive longitudinal data arising mobile health trials, specifically latent variable models and joint models with recurrent event processes.
   date: true
   link: https://example.com
   image:  http://placehold.it/100x100
   tech: 
-    - Java
-    - Maven
-    - Jenkins
 
-- name: Project 4
+- name: Easton Huch
   id: project4
   description: >
-    Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua.
-    Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. 0
+    PhD Student. Working on robust Bayesian methods for causal inference with applications to time-varying effect estimation in mobile health studies.
   date: true
   link: https://example.com
   image: http://placehold.it/100x100
   tech: 
-    - Sonarcube
-    - Java
