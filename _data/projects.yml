@@ -4,8 +4,8 @@
     <b> Graduated, 2023. </b> Postdoctoral Research Fellow at the University of Cambridge with <a href="http://www.statslab.cam.ac.uk/~qz280/"> Qingyuan Zhao</a>.
     Worked on statistical methods for time-varying treatment effects in the context of micro-randomized trials.
   date: true
-  link: https://example.com
-  image:  http://placehold.it/100x100
+  link: https://herashi.github.io/
+  image:  /assets/img/avatar/students/jierushi.png
   tech: 
 
 
@@ -24,8 +24,8 @@
   description: >
     PhD Student. Working on statistical methods for intensive longitudinal data arising mobile health trials, specifically latent variable models and joint models with recurrent event processes.
   date: true
-  link: https://example.com
-  image:  http://placehold.it/100x100
+  link: https://madelineabbott.github.io/
+  image:  /assets/img/avatar/students/madelineabbott.jpg
   tech: 
 
 - name: Easton Huch
@@ -33,6 +33,6 @@
   description: >
     PhD Student. Working on robust Bayesian methods for causal inference with applications to time-varying effect estimation in mobile health studies.
   date: true
-  link: https://example.com
-  image: http://placehold.it/100x100
+  link: https://prod.lsa.umich.edu/content/michigan-lsa/stats/en/people/phd-students/ekhuch.html#success
+  image: /assets/img/avatar/students/eastonhuch.jpg
   tech: 
