@@ -52,6 +52,12 @@ a.highlighted:hover {
   padding-top: 2px;
 }
 
+/* Standardize lab member avatar sizes */
+.lab-member-avatar {
+  width: 100px;
+  height: 100px;
+  object-fit: cover;
+}
 
 .dumbarton-spacer {
   padding-bottom: 50px;

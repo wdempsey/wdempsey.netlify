@@ -55,7 +55,7 @@
 - name: Madeline Abbott
   id: project3
   description: >
-    <b> Graduated, 2024. </b> F31 Grant Recipient, Best Presentation at MSSISS 2023.
+    <b> Graduated, 2024. </b> Research Associate in the Department of Biostatistics at Harvard University. F31 Grant Recipient, Best Presentation at MSSISS 2023.
     Worked on statistical methods for intensive longitudinal data arising from mobile health trials, specifically latent variable models and joint models with recurrent event processes.
   date: true
   link: https://madelineabbott.github.io/
@@ -65,7 +65,8 @@
 - name: Easton Huch
   id: project4
   description: >
-    <b> Graduated, 2025. </b> Worked on robust Bayesian methods for causal inference with applications to time-varying effect estimation in mobile health studies.
+    <b> Graduated, 2025. </b> Postdoctoral Fellow in Quantitative Marketing at Johns Hopkins University.
+    Worked on robust Bayesian methods for causal inference with applications to time-varying effect estimation in mobile health studies.
   date: true
   link: https://prod.lsa.umich.edu/content/michigan-lsa/stats/en/people/phd-students/ekhuch.html#success
   image: /assets/img/avatar/students/eastonhuch.jpg
