@@ -3,7 +3,7 @@
 .jekyll-cache
 .sass-cache
 _site
-Gemfile.lock
+vendor/
 
 # Demo Site 
 /Demo
