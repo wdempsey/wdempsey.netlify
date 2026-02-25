@@ -10,7 +10,7 @@
 
 title: Dempsey Lab
 email: wdem@umich.edu
-description: Professor Walter Dempsey
+description: Associate Professor Walter Dempsey
 baseurl:                                       # the subpath of your site, e.g. /blog
 url: "https://wdempsey.netlify.app/"          # the base hostname & protocol for your site, e.g. http://example.com
 image: /assets/img/dumbarton.png               # used to generate site link preview
@@ -91,7 +91,6 @@ kramdown:
 plugins:
   - jekyll-feed
   - jekyll-scholar
-  - jekyll-environment-variables
 sass:
   sass_dir: _sass
   style: compressed
@@ -116,7 +115,7 @@ exclude:
 # -----JEKYLL SCHOLAR SETTINGS-----------#
 #========================================#
 scholar:
-  last_name: Dumbarton
+  last_name: Dempsey
   style: apa
   locale: en
   source: /_bibliography/
