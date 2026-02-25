@@ -1,6 +1,6 @@
 - name: Publications
   id: publications
-  description: I list my statistical papers below. A full publication list can be found on <blue><a href="https://scholar.google.com/citations?user=TJ5P970AAAAJ&hl=en" target="_blank">Google Scholar</a></blue>.
+  description: I list my statistical papers below. * indicates mentored student or postdoctoral fellow. A full publication list can be found on <blue><a href="https://scholar.google.com/citations?user=TJ5P970AAAAJ&hl=en" target="_blank">Google Scholar</a></blue>.
   url: publications.html
   first: true
   
