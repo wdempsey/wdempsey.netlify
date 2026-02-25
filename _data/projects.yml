@@ -1,3 +1,76 @@
+- name: Yaxuan Huang
+  id: project_huang
+  description: >
+    PhD Student in Biostatistics.
+  date: true
+  link: "#"
+  image: https://via.placeholder.com/100
+  tech:
+
+- name: Rachel Gonzalez
+  id: project_gonzalez
+  description: >
+    PhD Student in Biostatistics (with Phil Boonstra).
+  date: true
+  link: "#"
+  image: https://via.placeholder.com/100
+  tech:
+
+- name: Yuxuan Chen
+  id: project_chen
+  description: >
+    PhD Student in Biostatistics.
+  date: true
+  link: "#"
+  image: https://via.placeholder.com/100
+  tech:
+
+- name: Tzu-Hsuan Lin
+  id: project_lin
+  description: >
+    PhD Student in Biostatistics.
+  date: true
+  link: "#"
+  image: https://via.placeholder.com/100
+  tech:
+
+- name: Youqi Yang
+  id: project_yang
+  description: >
+    PhD Student in Biostatistics (with Bhramar Mukherjee).
+  date: true
+  link: "#"
+  image: https://via.placeholder.com/100
+  tech:
+
+- name: Swaraj Bose
+  id: project_bose
+  description: >
+    PhD Student in Biostatistics.
+  date: true
+  link: "#"
+  image: https://via.placeholder.com/100
+  tech:
+
+- name: Madeline Abbott
+  id: project3
+  description: >
+    <b> Graduated, 2024. </b> F31 Grant Recipient, Best Presentation at MSSISS 2023.
+    Worked on statistical methods for intensive longitudinal data arising from mobile health trials, specifically latent variable models and joint models with recurrent event processes.
+  date: true
+  link: https://madelineabbott.github.io/
+  image: /assets/img/avatar/students/madelineabbott.jpg
+  tech:
+
+- name: Easton Huch
+  id: project4
+  description: >
+    <b> Graduated, 2025. </b> Worked on robust Bayesian methods for causal inference with applications to time-varying effect estimation in mobile health studies.
+  date: true
+  link: https://prod.lsa.umich.edu/content/michigan-lsa/stats/en/people/phd-students/ekhuch.html#success
+  image: /assets/img/avatar/students/eastonhuch.jpg
+  tech:
+
 - name: Hera Shi
   id: project1
   description: >
@@ -5,9 +78,8 @@
     Worked on statistical methods for time-varying treatment effects in the context of micro-randomized trials.
   date: true
   link: https://herashi.github.io/
-  image:  /assets/img/avatar/students/jierushi.png
-  tech: 
-
+  image: /assets/img/avatar/students/jierushi.png
+  tech:
 
 - name: Yuhua Zhang
   id: project2
@@ -17,22 +89,4 @@
   date: true
   link: https://yuhuazhang1995.github.io/
   image: /assets/img/avatar/students/yuhuazhang.jpg
-  tech: 
-
-- name: Madeline Abbott
-  id: project3
-  description: >
-    PhD Student. Working on statistical methods for intensive longitudinal data arising mobile health trials, specifically latent variable models and joint models with recurrent event processes.
-  date: true
-  link: https://madelineabbott.github.io/
-  image:  /assets/img/avatar/students/madelineabbott.jpg
-  tech: 
-
-- name: Easton Huch
-  id: project4
-  description: >
-    PhD Student. Working on robust Bayesian methods for causal inference with applications to time-varying effect estimation in mobile health studies.
-  date: true
-  link: https://prod.lsa.umich.edu/content/michigan-lsa/stats/en/people/phd-students/ekhuch.html#success
-  image: /assets/img/avatar/students/eastonhuch.jpg
-  tech: 
+  tech:
