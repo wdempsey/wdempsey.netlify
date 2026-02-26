@@ -1,10 +1,10 @@
 - name: Yaxuan Huang
   id: project_huang
   description: >
-    PhD Student in Biostatistics.
+    PhD Student in Biostatistics. Yaxuan's research focuses on developing reinforcement learning methods for decision-making with missing data. She is also interested in real-world deployment of these methods in online mobile health studies.
   date: true
-  link: "#"
-  image: /assets/img/avatar/students/genericstudent.jpg
+  link: https://www.linkedin.com/in/yaxuan-huang-b887102b3/
+  image: /assets/img/avatar/students/yaxuanhuang.JPG
   tech:
 
 - name: Rachel Tucker Gonzalez
