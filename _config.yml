@@ -46,6 +46,7 @@ ui_theme: abyss                                 # Create your own theme by setti
 # -----------BLOG SETTINGS---------------#
 #========================================#
 
+excerpt_separator: "<!-- more -->"
 tags:  post jekyll styleguide ipsum
 twitter-widget: false # true,false                  # Used to show your twitter timeline on blog home page
 

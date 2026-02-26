@@ -2,7 +2,7 @@
 layout: page
 permalink: /blog.html
 title: Blog
-description: Methods, software, tutorials, and lab updates
+description: Posts about Methods, Software, Tutorials, Lab Updates, and (sometimes) My Opinions/Side Projects
 header-img:  
 last-updated: 2020-10-30 5:55 PM
 ---
@@ -49,8 +49,9 @@ last-updated: 2020-10-30 5:55 PM
                 <h3><a href="{{ post.url }}" class="nohighlight">{{ post.title }}</a></h3>
                 {% if post.tag %}<a href="#" class="badge badge-primary" style="background-color: rgba(78, 34, 208, 0.1);color: #4e22d0;">{{post.tag}}</a>{% endif %}
                 <p>{{post.description}}</p>
-                {% assign post_lead = post.lead | default: post.excerpt | default: post.description %}
-                {% if post_lead %}<p><i>{{ post_lead }}</i></p>{% endif %}
+                {% assign post_preview = post.lead | default: post.excerpt | default: post.description %}
+                {% if post_preview %}<div class="post-preview">{{ post_preview }}</div>{% endif %}
+                <p class="mt-2"><a href="{{ post.url }}" class="highlighted">Read more &rarr;</a></p>
               </div>
               {% break %}
               {% endif %}
@@ -77,8 +78,9 @@ last-updated: 2020-10-30 5:55 PM
             <h3><a href="{{ post.url }}" class="nohighlight">{{ post.title }}</a></h3>
             {% if post.tag %}<a href="#" class="badge badge-primary" style="background-color: rgba(78, 34, 208, 0.1);color: #4e22d0;">{{post.tag}}</a>{% endif %}
             <p>{{post.description}}</p>
-            {% assign post_lead = post.lead | default: post.excerpt | default: post.description %}
-            {% if post_lead %}<p><i>{{ post_lead }}</i></p>{% endif %}
+            {% assign post_preview = post.lead | default: post.excerpt | default: post.description %}
+            {% if post_preview %}<div class="post-preview">{{ post_preview }}</div>{% endif %}
+            <p class="mt-2"><a href="{{ post.url }}" class="highlighted">Read more &rarr;</a></p>
           </div>
           {% endunless %}
         {% endfor %}
@@ -89,8 +91,9 @@ last-updated: 2020-10-30 5:55 PM
           <h3><a href="{{ post.url }}" class="nohighlight">{{ post.title }}</a></h3>
           {% if post.tag %}<a href="#" class="badge badge-primary" style="background-color: rgba(78, 34, 208, 0.1);color: #4e22d0;">{{post.tag}}</a>{% endif %}
           <p>{{post.description}}</p>
-          {% assign post_lead = post.lead | default: post.excerpt | default: post.description %}
-          {% if post_lead %}<p><i>{{ post_lead }}</i></p>{% endif %}
+          {% assign post_preview = post.lead | default: post.excerpt | default: post.description %}
+          {% if post_preview %}<div class="post-preview">{{ post_preview }}</div>{% endif %}
+          <p class="mt-2"><a href="{{ post.url }}" class="highlighted">Read more &rarr;</a></p>
         </div>
         {% endfor %}
       {% endif %}
@@ -136,8 +139,9 @@ last-updated: 2020-10-30 5:55 PM
             <h3><a href="{{ post.url }}" class="nohighlight">{{ post.title }}</a></h3>
             {% if post.tag %}<a href="#" class="badge badge-primary" style="background-color: rgba(78, 34, 208, 0.1);color: #4e22d0;">{{post.tag}}</a>{% endif %}
             <p>{{post.description}}</p>
-            {% assign post_lead = post.lead | default: post.excerpt | default: post.description %}
-            {% if post_lead %}<p><i>{{ post_lead }}</i></p>{% endif %}
+            {% assign post_preview = post.lead | default: post.excerpt | default: post.description %}
+            {% if post_preview %}<div class="post-preview">{{ post_preview }}</div>{% endif %}
+            <p class="mt-2"><a href="{{ post.url }}" class="highlighted">Read more &rarr;</a></p>
           </div>
           {% break %}
           {% endif %}
@@ -163,8 +167,9 @@ last-updated: 2020-10-30 5:55 PM
         <h3><a href="{{ post.url }}" class="nohighlight">{{ post.title }}</a></h3>
         {% if post.tag %}<a href="#" class="badge badge-primary" style="background-color: rgba(78, 34, 208, 0.1);color: #4e22d0;">{{post.tag}}</a>{% endif %}
         <p>{{post.description}}</p>
-        {% assign post_lead = post.lead | default: post.excerpt | default: post.description %}
-        {% if post_lead %}<p><i>{{ post_lead }}</i></p>{% endif %}
+        {% assign post_preview = post.lead | default: post.excerpt | default: post.description %}
+        {% if post_preview %}<div class="post-preview">{{ post_preview }}</div>{% endif %}
+        <p class="mt-2"><a href="{{ post.url }}" class="highlighted">Read more &rarr;</a></p>
       </div>
       {% endunless %}
     {% endfor %}

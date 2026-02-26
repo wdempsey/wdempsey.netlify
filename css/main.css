@@ -616,6 +616,18 @@ a:visited {color: black;}   /* visited link */
 a:hover {color: black;}     /* mouse over link */
 a:active {color: black;}    /* selected link */
 
+/* Links in blog posts and cards: visible color and underline */
+.card-text a,
+.blogcard a {
+  color: #0066cc;
+  text-decoration: underline;
+}
+.card-text a:hover,
+.blogcard a:hover {
+  color: #004499;
+  text-decoration: underline;
+}
+
 
 
 /* regular - font-weight: 400 */
