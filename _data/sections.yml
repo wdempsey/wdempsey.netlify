@@ -18,6 +18,13 @@
   url: projects.html
   first: false
 
+- name: Blog
+  id: blog
+  description: Methods, software, tutorials, and lab updates.
+  content: 
+  url: blog.html
+  first: false
+
 # - name: Projects
 #   id: projects
 #   description: Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua.

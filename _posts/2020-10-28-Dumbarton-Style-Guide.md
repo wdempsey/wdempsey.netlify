@@ -1,5 +1,6 @@
 ---
 layout: post
+published: false
 title:  "Dumbarton Style Guide"
 description: "The Only Useful Post Here"
 type: card-dated

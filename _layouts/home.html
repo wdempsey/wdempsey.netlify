@@ -136,6 +136,11 @@ layout: default
                 {% endfor %}
                 </div>
               </div>
+            {% elsif section.name == "Blog" %}
+              <div class="tab-pane overflow-auto" id="{{section.id}}" role="tabpanel" aria-labelledby="{{section.id}}-tab">  
+                <p><i>{{section.description}}</i></p>
+                <p class="card-text"><a href="/{{ section.url }}" class="highlighted">View all posts</a></p>
+              </div>
             {% else %}
               <div class="tab-pane overflow-auto" id="{{section.id}}" role="tabpanel" aria-labelledby="{{section.id}}-tab">  
                 <h5 class="card-title text-center"><a href="/{{ section.url }}" class="highlighted">{{section.description}}</a></h5>

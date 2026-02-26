@@ -1,8 +1,8 @@
 ---
 layout: page
 permalink: /blog.html
-title: My Blog
-description: I write about cyber threat intelligence
+title: Blog
+description: Methods, software, tutorials, and lab updates
 header-img:  
 last-updated: 2020-10-30 5:55 PM
 ---
@@ -13,12 +13,14 @@ last-updated: 2020-10-30 5:55 PM
     <!-- Blog Entries Column -->
     <div class="col-md-8">
           <div class="col-md-12">
-          {% for post in site.posts %}
+          {% assign visible_posts = site.posts | where_exp: "item", "item.published != false" %}
+          {% for post in visible_posts %}
               <div class="blogcard {{post.card}} mb-4 mt-4" style="width: 100%;">
                 <h3><a href="{{ post.url }}" class="nohighlight">{{ post.title }}</a></h3>
-                  <a href="#" class="badge badge-primary" style="background-color: rgba(78, 34, 208, 0.1);color: #4e22d0;">{{post.tag}}</a>  
+                {% if post.tag %}<a href="#" class="badge badge-primary" style="background-color: rgba(78, 34, 208, 0.1);color: #4e22d0;">{{post.tag}}</a>{% endif %}
                 <p>{{post.description}}</p>
-                <p><i>{{post.lead}}</i></p>
+                {% assign post_lead = post.lead | default: post.excerpt | default: post.description %}
+                {% if post_lead %}<p><i>{{ post_lead }}</i></p>{% endif %}
               </div>
           {% endfor %}
           </div>
@@ -30,16 +32,17 @@ last-updated: 2020-10-30 5:55 PM
   </div>
   {% else %}
     <!-- Blog Entries Column -->
-      <div class="col-md-12">
-      {% for post in site.posts %}
+    <div class="col-md-12">
+      {% assign visible_posts = site.posts | where_exp: "item", "item.published != false" %}
+      {% for post in visible_posts %}
           <div class="blogcard {{post.card}} mb-4 mt-4" style="width: 100%;">
             <h3><a href="{{ post.url }}" class="nohighlight">{{ post.title }}</a></h3>
-              <a href="#" class="badge badge-primary" style="background-color: rgba(78, 34, 208, 0.1);color: #4e22d0;">{{post.tag}}</a>  
+            {% if post.tag %}<a href="#" class="badge badge-primary" style="background-color: rgba(78, 34, 208, 0.1);color: #4e22d0;">{{post.tag}}</a>{% endif %}
             <p>{{post.description}}</p>
-            <p><i>{{post.lead}}</i></p>
+            {% assign post_lead = post.lead | default: post.excerpt | default: post.description %}
+            {% if post_lead %}<p><i>{{ post_lead }}</i></p>{% endif %}
           </div>
       {% endfor %}
-      </div>
     </div>
   {% endif %}
 

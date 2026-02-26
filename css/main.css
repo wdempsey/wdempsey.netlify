@@ -394,7 +394,7 @@ background-color: #FF6600
 
 
 .highlight .hll { background-color: #333333 }
-.highlight  { background: #212121; color: #ffffff }
+.highlight  { background: #212121; color: #ffffff; overflow-x: auto; }
 .highlight .c { color: #008800; font-style: italic; background-color: #0f140f } /* Comment */
 .highlight .err { color: #ffffff } /* Error */
 .highlight .esc { color: #ffffff } /* Escape */

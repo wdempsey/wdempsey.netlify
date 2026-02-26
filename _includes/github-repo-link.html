@@ -1,0 +1,14 @@
+{% if page.github_repo or page.github_code %}
+<div class="alert alert-secondary mb-4" role="alert">
+  <i class="fab fa-github fa-lg mr-2"></i>
+  {% if page.github_repo %}
+    <a href="{{ page.github_repo }}" target="_blank" rel="noopener noreferrer" class="alert-link">View on GitHub</a>
+  {% endif %}
+  {% if page.github_repo and page.github_code %}
+    <span class="mx-2">|</span>
+  {% endif %}
+  {% if page.github_code %}
+    <a href="{{ page.github_code }}" target="_blank" rel="noopener noreferrer" class="alert-link">View code</a>
+  {% endif %}
+</div>
+{% endif %}
