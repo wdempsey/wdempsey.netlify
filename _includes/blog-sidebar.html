@@ -1,0 +1,45 @@
+{% comment %}
+  Chapter-style sidebar navigation for blog. Lists themes and their posts.
+{% endcomment %}
+{% assign blog_data = site.data.blog_themes %}
+{% if blog_data and blog_data.themes %}
+
+<div class="card my-4">
+  <h5 class="card-header">Navigation</h5>
+  <div class="card-body">
+    <nav class="blog-sidebar-nav">
+      {% assign visible_posts = site.posts | where_exp: "item", "item.published != false" %}
+      {% for theme in blog_data.themes %}
+        {% assign theme_has_posts = false %}
+        {% for slug in theme.posts %}
+          {% for post in visible_posts %}
+            {% assign post_slug = post.url | split: "/" | last | replace: ".html", "" %}
+            {% if post_slug == slug %}
+              {% assign theme_has_posts = true %}
+              {% break %}
+            {% endif %}
+          {% endfor %}
+        {% endfor %}
+
+        {% if theme_has_posts %}
+        <div class="mb-3">
+          <h6 class="text-uppercase small font-weight-bold">{{ theme.name }}</h6>
+          <ul class="list-unstyled mb-0 pl-2">
+            {% for slug in theme.posts %}
+              {% for post in visible_posts %}
+                {% assign post_slug = post.url | split: "/" | last | replace: ".html", "" %}
+                {% if post_slug == slug %}
+            <li><a href="{{ post.url }}" class="nohighlight">{{ post.title }}</a></li>
+                {% break %}
+                {% endif %}
+              {% endfor %}
+            {% endfor %}
+          </ul>
+        </div>
+        {% endif %}
+      {% endfor %}
+    </nav>
+  </div>
+</div>
+
+{% endif %}

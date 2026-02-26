@@ -2,7 +2,7 @@
 layout: post
 title: "DR_WCLS_LASSO: Post-Selection Inference for Micro-Randomized Trials"
 description: "An R package for doubly robust variable selection and inference in MRTs using LASSO."
-date: 2025-02-25
+date: 2026-02-24
 author: Walter Dempsey
 tag: software
 categories: [software, R, mHealth, MRT]

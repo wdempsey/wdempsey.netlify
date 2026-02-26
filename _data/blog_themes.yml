@@ -1,0 +1,17 @@
+# Themes define logical groupings for the blog. Order of themes and posts controls navigation.
+# Methods first so Hybrid SMART-MRT appears above DR WCLS
+themes:
+  - id: methods
+    name: Methods
+    description: Statistical methods and tutorials
+    posts:
+      - hybrid-smart-mrt-designs
+  - id: software
+    name: Software
+    description: R packages and tools
+    posts:
+      - dr-wcls-lasso-post-selection-inference
+  - id: lab
+    name: Lab Updates
+    description: Lab news and announcements
+    posts: []

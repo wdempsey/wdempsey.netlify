@@ -8,13 +8,43 @@ last-updated: 2020-10-30 5:55 PM
 ---
 
 <!-- Page Content -->
-  {% if site.twitter-widget %}
-  <div class="row">
-    <!-- Blog Entries Column -->
-    <div class="col-md-8">
-          <div class="col-md-12">
-          {% assign visible_posts = site.posts | where_exp: "item", "item.published != false" %}
-          {% for post in visible_posts %}
+{% assign blog_data = site.data.blog_themes %}
+{% assign visible_posts = site.posts | where_exp: "item", "item.published != false" %}
+
+{% if site.twitter-widget %}
+<div class="row">
+  <!-- Blog Entries Column -->
+  <div class="col-md-8">
+    <div class="col-md-12">
+      {% if blog_data and blog_data.themes %}
+        {% comment %} Collect all slugs that are in themes {% endcomment %}
+        {% assign themed_slugs = "" | split: "" %}
+        {% for theme in blog_data.themes %}
+          {% for slug in theme.posts %}
+            {% assign themed_slugs = themed_slugs | push: slug %}
+          {% endfor %}
+        {% endfor %}
+
+        {% comment %} Group by theme {% endcomment %}
+        {% for theme in blog_data.themes %}
+          {% assign theme_has_posts = false %}
+          {% for slug in theme.posts %}
+            {% for post in visible_posts %}
+              {% assign post_slug = post.url | split: "/" | last | replace: ".html", "" %}
+              {% if post_slug == slug %}
+                {% assign theme_has_posts = true %}
+                {% break %}
+              {% endif %}
+            {% endfor %}
+          {% endfor %}
+
+          {% if theme_has_posts %}
+          <h4 class="mt-4 mb-2">{{ theme.name }}</h4>
+          {% if theme.description %}<p class="text-muted small">{{ theme.description }}</p>{% endif %}
+          {% for slug in theme.posts %}
+            {% for post in visible_posts %}
+              {% assign post_slug = post.url | split: "/" | last | replace: ".html", "" %}
+              {% if post_slug == slug %}
               <div class="blogcard {{post.card}} mb-4 mt-4" style="width: 100%;">
                 <h3><a href="{{ post.url }}" class="nohighlight">{{ post.title }}</a></h3>
                 {% if post.tag %}<a href="#" class="badge badge-primary" style="background-color: rgba(78, 34, 208, 0.1);color: #4e22d0;">{{post.tag}}</a>{% endif %}
@@ -22,19 +52,27 @@ last-updated: 2020-10-30 5:55 PM
                 {% assign post_lead = post.lead | default: post.excerpt | default: post.description %}
                 {% if post_lead %}<p><i>{{ post_lead }}</i></p>{% endif %}
               </div>
+              {% break %}
+              {% endif %}
+            {% endfor %}
           {% endfor %}
-          </div>
-    </div>
-    <!-- Twitter Side Widget -->
-    <div class="card my-4 shadow border-0">
-        <a class="twitter-timeline" data-height="2300" data-theme="light" href="https://twitter.com/{{ site.twitter }}?ref_src=twsrc%5Etfw"></a> <script async src="https://platform.twitter.com/widgets.js" charset="utf-8"></script>           
-    </div>
-  </div>
-  {% else %}
-    <!-- Blog Entries Column -->
-    <div class="col-md-12">
-      {% assign visible_posts = site.posts | where_exp: "item", "item.published != false" %}
-      {% for post in visible_posts %}
+          {% endif %}
+        {% endfor %}
+
+        {% comment %} Other posts not in any theme {% endcomment %}
+        {% assign has_other = false %}
+        {% for post in visible_posts %}
+          {% assign post_slug = post.url | split: "/" | last | replace: ".html", "" %}
+          {% unless themed_slugs contains post_slug %}
+            {% assign has_other = true %}
+            {% break %}
+          {% endunless %}
+        {% endfor %}
+        {% if has_other %}
+        <h4 class="mt-4 mb-2">Other</h4>
+        {% for post in visible_posts %}
+          {% assign post_slug = post.url | split: "/" | last | replace: ".html", "" %}
+          {% unless themed_slugs contains post_slug %}
           <div class="blogcard {{post.card}} mb-4 mt-4" style="width: 100%;">
             <h3><a href="{{ post.url }}" class="nohighlight">{{ post.title }}</a></h3>
             {% if post.tag %}<a href="#" class="badge badge-primary" style="background-color: rgba(78, 34, 208, 0.1);color: #4e22d0;">{{post.tag}}</a>{% endif %}
@@ -42,7 +80,109 @@ last-updated: 2020-10-30 5:55 PM
             {% assign post_lead = post.lead | default: post.excerpt | default: post.description %}
             {% if post_lead %}<p><i>{{ post_lead }}</i></p>{% endif %}
           </div>
-      {% endfor %}
+          {% endunless %}
+        {% endfor %}
+        {% endif %}
+      {% else %}
+        {% for post in visible_posts %}
+        <div class="blogcard {{post.card}} mb-4 mt-4" style="width: 100%;">
+          <h3><a href="{{ post.url }}" class="nohighlight">{{ post.title }}</a></h3>
+          {% if post.tag %}<a href="#" class="badge badge-primary" style="background-color: rgba(78, 34, 208, 0.1);color: #4e22d0;">{{post.tag}}</a>{% endif %}
+          <p>{{post.description}}</p>
+          {% assign post_lead = post.lead | default: post.excerpt | default: post.description %}
+          {% if post_lead %}<p><i>{{ post_lead }}</i></p>{% endif %}
+        </div>
+        {% endfor %}
+      {% endif %}
     </div>
-  {% endif %}
+  </div>
+  <!-- Twitter Side Widget -->
+  <div class="card my-4 shadow border-0">
+    <a class="twitter-timeline" data-height="2300" data-theme="light" href="https://twitter.com/{{ site.twitter }}?ref_src=twsrc%5Etfw"></a> <script async src="https://platform.twitter.com/widgets.js" charset="utf-8"></script>           
+  </div>
+</div>
+{% else %}
+<!-- Blog with sidebar -->
+<div class="row">
+  <div class="col-md-8">
+  {% if blog_data and blog_data.themes %}
+    {% assign themed_slugs = "" | split: "" %}
+    {% for theme in blog_data.themes %}
+      {% for slug in theme.posts %}
+        {% assign themed_slugs = themed_slugs | push: slug %}
+      {% endfor %}
+    {% endfor %}
 
+    {% for theme in blog_data.themes %}
+      {% assign theme_has_posts = false %}
+      {% for slug in theme.posts %}
+        {% for post in visible_posts %}
+          {% assign post_slug = post.url | split: "/" | last | replace: ".html", "" %}
+          {% if post_slug == slug %}
+            {% assign theme_has_posts = true %}
+            {% break %}
+          {% endif %}
+        {% endfor %}
+      {% endfor %}
+
+      {% if theme_has_posts %}
+      <h4 class="mt-4 mb-2">{{ theme.name }}</h4>
+      {% if theme.description %}<p class="text-muted small">{{ theme.description }}</p>{% endif %}
+      {% for slug in theme.posts %}
+        {% for post in visible_posts %}
+          {% assign post_slug = post.url | split: "/" | last | replace: ".html", "" %}
+          {% if post_slug == slug %}
+          <div class="blogcard {{post.card}} mb-4 mt-4" style="width: 100%;">
+            <h3><a href="{{ post.url }}" class="nohighlight">{{ post.title }}</a></h3>
+            {% if post.tag %}<a href="#" class="badge badge-primary" style="background-color: rgba(78, 34, 208, 0.1);color: #4e22d0;">{{post.tag}}</a>{% endif %}
+            <p>{{post.description}}</p>
+            {% assign post_lead = post.lead | default: post.excerpt | default: post.description %}
+            {% if post_lead %}<p><i>{{ post_lead }}</i></p>{% endif %}
+          </div>
+          {% break %}
+          {% endif %}
+        {% endfor %}
+      {% endfor %}
+      {% endif %}
+    {% endfor %}
+
+    {% assign has_other = false %}
+    {% for post in visible_posts %}
+      {% assign post_slug = post.url | split: "/" | last | replace: ".html", "" %}
+      {% unless themed_slugs contains post_slug %}
+        {% assign has_other = true %}
+        {% break %}
+      {% endunless %}
+    {% endfor %}
+    {% if has_other %}
+    <h4 class="mt-4 mb-2">Other</h4>
+    {% for post in visible_posts %}
+      {% assign post_slug = post.url | split: "/" | last | replace: ".html", "" %}
+      {% unless themed_slugs contains post_slug %}
+      <div class="blogcard {{post.card}} mb-4 mt-4" style="width: 100%;">
+        <h3><a href="{{ post.url }}" class="nohighlight">{{ post.title }}</a></h3>
+        {% if post.tag %}<a href="#" class="badge badge-primary" style="background-color: rgba(78, 34, 208, 0.1);color: #4e22d0;">{{post.tag}}</a>{% endif %}
+        <p>{{post.description}}</p>
+        {% assign post_lead = post.lead | default: post.excerpt | default: post.description %}
+        {% if post_lead %}<p><i>{{ post_lead }}</i></p>{% endif %}
+      </div>
+      {% endunless %}
+    {% endfor %}
+    {% endif %}
+  {% else %}
+    {% for post in visible_posts %}
+    <div class="blogcard {{post.card}} mb-4 mt-4" style="width: 100%;">
+      <h3><a href="{{ post.url }}" class="nohighlight">{{ post.title }}</a></h3>
+      {% if post.tag %}<a href="#" class="badge badge-primary" style="background-color: rgba(78, 34, 208, 0.1);color: #4e22d0;">{{post.tag}}</a>{% endif %}
+      <p>{{post.description}}</p>
+      {% assign post_lead = post.lead | default: post.excerpt | default: post.description %}
+      {% if post_lead %}<p><i>{{ post_lead }}</i></p>{% endif %}
+    </div>
+    {% endfor %}
+  {% endif %}
+  </div>
+  <div class="col-md-4">
+    {% include blog-sidebar.html %}
+  </div>
+</div>
+{% endif %}

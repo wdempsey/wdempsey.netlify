@@ -139,7 +139,18 @@ layout: default
             {% elsif section.name == "Blog" %}
               <div class="tab-pane overflow-auto" id="{{section.id}}" role="tabpanel" aria-labelledby="{{section.id}}-tab">  
                 <p><i>{{section.description}}</i></p>
+                {% assign latest_post = site.posts | where_exp: "item", "item.published != false" | first %}
+                {% if latest_post %}
+                <p class="text-muted small mb-2">Most recent post:</p>
+                <div class="blogcard card-1 mb-4 mt-4" style="width: 100%;">
+                  <h5><a href="{{ latest_post.url }}" class="nohighlight">{{ latest_post.title }}</a></h5>
+                  {% if latest_post.tag %}<span class="badge badge-primary" style="background-color: rgba(78, 34, 208, 0.1);color: #4e22d0;">{{ latest_post.tag }}</span>{% endif %}
+                  <p>{{ latest_post.description }}</p>
+                  <p class="card-text"><a href="/{{ section.url }}" class="highlighted">View all posts &rarr;</a></p>
+                </div>
+                {% else %}
                 <p class="card-text"><a href="/{{ section.url }}" class="highlighted">View all posts</a></p>
+                {% endif %}
               </div>
             {% else %}
               <div class="tab-pane overflow-auto" id="{{section.id}}" role="tabpanel" aria-labelledby="{{section.id}}-tab">  

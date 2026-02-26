@@ -87,6 +87,7 @@ markdown: kramdown
 
 kramdown:
   syntax_highlighter: rouge
+  math_engine: mathjax
 
 plugins:
   - jekyll-feed
@@ -98,6 +99,13 @@ sass:
 
 include:
   - _posts
+
+defaults:
+  - scope:
+      path: ""
+      type: "posts"
+    values:
+      permalink: /:year/:month/:day/:title.html
 
 exclude:
   - .sass-cache/

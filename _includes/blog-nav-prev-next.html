@@ -1,0 +1,63 @@
+{% comment %}
+  Prev/Next navigation based on blog_themes order.
+  Slug from post: last segment of post.url, with .html removed.
+{% endcomment %}
+{% assign blog_data = site.data.blog_themes %}
+{% if blog_data and blog_data.themes %}
+
+{% assign current_slug = page.url | split: "/" | last | replace: ".html", "" %}
+{% assign prev_post = nil %}
+{% assign next_post = nil %}
+{% assign found_current = false %}
+
+{% for theme in blog_data.themes %}
+  {% for slug in theme.posts %}
+    {% assign matched_post = nil %}
+    {% for p in site.posts %}
+      {% unless p.published == false %}
+      {% assign p_slug = p.url | split: "/" | last | replace: ".html", "" %}
+      {% if p_slug == slug %}
+        {% assign matched_post = p %}
+        {% break %}
+      {% endif %}
+      {% endunless %}
+    {% endfor %}
+
+    {% if matched_post %}
+      {% if found_current %}
+        {% assign next_post = matched_post %}
+        {% break %}
+      {% endif %}
+      {% assign p_slug = matched_post.url | split: "/" | last | replace: ".html", "" %}
+      {% if p_slug == current_slug %}
+        {% assign found_current = true %}
+      {% else %}
+        {% assign prev_post = matched_post %}
+      {% endif %}
+    {% endif %}
+  {% endfor %}
+  {% if next_post %}{% break %}{% endif %}
+{% endfor %}
+
+{% if found_current %}
+<nav class="blog-nav-prev-next mt-4 pt-4 border-top" aria-label="Blog navigation">
+  <div class="d-flex justify-content-between flex-wrap">
+    <div>
+      {% if prev_post %}
+        <a href="{{ prev_post.url }}" class="nohighlight">&larr; Previous: {{ prev_post.title }}</a>
+      {% else %}
+        <span class="text-muted">&larr; Previous</span>
+      {% endif %}
+    </div>
+    <div>
+      {% if next_post %}
+        <a href="{{ next_post.url }}" class="nohighlight">Next: {{ next_post.title }} &rarr;</a>
+      {% else %}
+        <span class="text-muted">Next &rarr;</span>
+      {% endif %}
+    </div>
+  </div>
+</nav>
+{% endif %}
+
+{% endif %}

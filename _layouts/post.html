@@ -17,7 +17,8 @@ layout: page
 <div class="card border-0" style="width: 100%;">
   <div class="card-body">
     {% include github-repo-link.html %}
-    <p class="card-text">{{ content | markdownify }}</p>
+    <div class="card-text">{{ content }}</div>
+    {% include blog-nav-prev-next.html %}
   </div>
 </div>
 

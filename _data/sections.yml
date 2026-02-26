@@ -3,6 +3,13 @@
   description: I list my statistical papers below. * indicates mentored student or postdoctoral fellow. A full publication list can be found on <blue><a href="https://scholar.google.com/citations?user=TJ5P970AAAAJ&hl=en" target="_blank">Google Scholar</a></blue>.
   url: publications.html
   first: true
+
+- name: Blog
+  id: blog
+  description: Methods, software, tutorials, and lab updates.
+  content: 
+  url: blog.html
+  first: false
   
 - name: Teaching
   id: teaching
@@ -16,13 +23,6 @@
   description: A list of recent graduate students and postdoctoral research fellows.
   content: 
   url: projects.html
-  first: false
-
-- name: Blog
-  id: blog
-  description: Methods, software, tutorials, and lab updates.
-  content: 
-  url: blog.html
   first: false
 
 # - name: Projects
