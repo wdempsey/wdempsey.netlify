@@ -46,10 +46,10 @@
 - name: Swaraj Bose
   id: project_bose
   description: >
-    PhD Student in Biostatistics.
+    PhD Student in Biostatistics. Research focuses on building prediction intervals for Individual Treatment Effects (ITEs) for Micro-randomized trials (MRTs) using conformal inference techniques for decision support.
   date: true
   link: "#"
-  image: /assets/img/avatar/students/genericstudent.jpg
+  image: /assets/img/avatar/students/swarajbose.jpg
   tech:
 
 - name: Madeline Abbott
