@@ -7,7 +7,7 @@
   image: /assets/img/avatar/students/genericstudent.jpg
   tech:
 
-- name: Rachel Tucker
+- name: Rachel Tucker Gonzalez
   id: project_tucker
   description: >
     PhD Student in Biostatistics (with Phil Boonstra). Rachel's research interests include Bayesian nonparametric methods for multistate models, with applications to win ratio estimation. She is a member of the Cancer Biostatistics Training Program at the University of Michigan and works on a variety of applied projects across cancer sites.
