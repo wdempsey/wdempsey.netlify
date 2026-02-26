@@ -4,25 +4,25 @@
     PhD Student in Biostatistics.
   date: true
   link: "#"
-  image: https://via.placeholder.com/100
+  image: /assets/img/avatar/students/genericstudent.jpg
   tech:
 
-- name: Rachel Gonzalez
-  id: project_gonzalez
+- name: Rachel Tucker
+  id: project_tucker
   description: >
-    PhD Student in Biostatistics (with Phil Boonstra).
+    PhD Student in Biostatistics (with Phil Boonstra). Rachel's research interests include Bayesian nonparametric methods for multistate models, with applications to win ratio estimation. She is a member of the Cancer Biostatistics Training Program at the University of Michigan and works on a variety of applied projects across cancer sites.
   date: true
-  link: "#"
-  image: https://via.placeholder.com/100
+  link: https://www.linkedin.com/in/racheltuckergonzalez
+  image: /assets/img/avatar/students/racheltucker.jpg
   tech:
 
 - name: Yuxuan Chen
   id: project_chen
   description: >
-    PhD Student in Biostatistics.
+    PhD Student in Biostatistics. Works on selective inference to ensure valid statistical inference for effect moderation when models are chosen in a data-driven manner using micro-randomized trial data.
   date: true
   link: "#"
-  image: https://via.placeholder.com/100
+  image: /assets/img/avatar/students/yuxuanchen.jpg
   tech:
 
 - name: Tzu-Hsuan Lin
@@ -31,16 +31,16 @@
     PhD Student in Biostatistics.
   date: true
   link: "#"
-  image: https://via.placeholder.com/100
+  image: /assets/img/avatar/students/genericstudent.jpg
   tech:
 
 - name: Youqi Yang
   id: project_yang
   description: >
-    PhD Student in Biostatistics (with Bhramar Mukherjee).
+    PhD Student in Biostatistics (with Bhramar Mukherjee). Research focuses on statistical methods for causal inference in mediation within micro-randomized trials, as well as treatment heterogeneity within randomized controlled trials.
   date: true
   link: "#"
-  image: https://via.placeholder.com/100
+  image: /assets/img/avatar/students/youqiyang.jpg
   tech:
 
 - name: Swaraj Bose
@@ -49,7 +49,7 @@
     PhD Student in Biostatistics.
   date: true
   link: "#"
-  image: https://via.placeholder.com/100
+  image: /assets/img/avatar/students/genericstudent.jpg
   tech:
 
 - name: Madeline Abbott
