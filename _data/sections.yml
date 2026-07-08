@@ -4,12 +4,13 @@
   url: publications.html
   first: true
 
-- name: Blog
-  id: blog
-  description: Posts about Methods, Software, Tutorials, Lab Updates, and (sometimes) My Opinions/Side Projects.
-  content: 
-  url: blog.html
-  first: false
+# Blog hidden for now — restore by uncommenting
+# - name: Blog
+#   id: blog
+#   description: Posts about Methods, Software, Tutorials, Lab Updates, and (sometimes) My Opinions/Side Projects.
+#   content:
+#   url: blog.html
+#   first: false
   
 - name: Teaching
   id: teaching
