@@ -710,3 +710,9 @@ $font-family: Proxima, Helvetica, Arial, sans-serif;
   font-family: Proxima;
   margin: 5% 0 0 15%;
 }
+
+/* Bump base text size site-wide (Bootstrap sizes in rem, so scaling
+   the html root scales body text and headings together). */
+html {
+  font-size: 18px;
+}

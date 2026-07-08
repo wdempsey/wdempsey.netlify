@@ -7,8 +7,12 @@ links:
 - title: Publications
   url: publications.html
 
-- title: Blog
-  url: blog.html
+# Blog hidden for now — restore by uncommenting
+# - title: Blog
+#   url: blog.html
+
+- title: Lab
+  url: /lab/
 
 - title: Vitae
   url: /assets/pdf/Dempsey_CV_06_2026.pdf
