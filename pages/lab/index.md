@@ -12,5 +12,6 @@ How we run research projects in the lab: expectations, structure, and tools. If 
 2. **[Starting a Project](/lab/starting-a-project/)** — initialization checklist, the Project Landing Page, and the phases of research.
 3. **[Communication Rules](/lab/communication/)** — weekly updates, Slack vs. email, 1:1s, and meeting notes.
 4. **[Lab Infrastructure](/lab/infrastructure/)** — the template repository, working documents, Overleaf, and the rest of the toolchain.
+5. **[Evaluations & Check-Ins](/lab/evaluations/)** — the annual review, quarterly check-ins, and downloadable forms.
 
 These pages borrow deliberately from Ethan Perez, Jacob Steinhardt, and Ben Kuhn — sources are linked inline where the ideas appear.

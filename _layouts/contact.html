@@ -24,17 +24,24 @@ last-updated: 2020-10-30 5:55 PM
 
 <div class="card shadow">
   <div class="container">
-    <form name="contact" method="POST" data-netlify="true">
+    <form name="contact" method="POST" data-netlify="true" netlify-honeypot="bot-field">
+      <input type="hidden" name="form-name" value="contact">
+      <p class="d-none" aria-hidden="true">
+        <label>Don't fill this out if you're human: <input name="bot-field"></label>
+      </p>
       <div class="mb-3 mt-5">
-        <input type="name" placeholder="Your Name" name="name" class="form-control" id="inputForName"/>
+        <input type="text" placeholder="Your Name" name="name" class="form-control" id="inputForName" required/>
       </div>
       <div class="mb-3">
-        <textarea type="message" placeholder="Your Message" name="message" class="form-control" id="inputforMessage"></textarea>
+        <input type="text" placeholder="Subject" name="subject" class="form-control" id="inputForSubject"/>
       </div>
       <div class="mb-3">
-        <input type="email" placeholder="Your Email" name="email" class="form-control" id="inputforEmail">
+        <textarea placeholder="Your Message" name="message" class="form-control" id="inputforMessage" rows="5" required></textarea>
       </div>
-      <button type="submit" class="btn mb-4" style="background-color:{{theme.default-button-color}};">Submit</button>
+      <div class="mb-3">
+        <input type="email" placeholder="Your Email (so I can reply)" name="email" class="form-control" id="inputforEmail" required>
+      </div>
+      <button type="submit" class="btn mb-4" style="background-color:{{theme.default-button-color}};">Send message</button>
     </form>
   </div>
 </div>

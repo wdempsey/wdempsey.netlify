@@ -28,7 +28,7 @@ The percentages below are a mental model of relative importance, not an evaluati
 
 ### Clear communication (5%)
 
-Your central working document stays current. Whether you share an RMarkdown file, a Jupyter notebook, or present live, your updates and plots are clean enough to digest quickly — so our 1:1 time goes to the *implications* of your results rather than untangling raw output or messy code. Weekly updates follow the template in [Communication Rules](/lab/communication/).
+Your central working document — for us, the Project Landing Page, the Google Doc described in [Starting a Project](/lab/starting-a-project/) — stays current. Whether you share an RMarkdown file, a Jupyter notebook, or present live, your updates and plots are clean enough to digest quickly — so our 1:1 time goes to the *implications* of your results rather than untangling raw output or messy code. Weekly updates follow the template in [Communication Rules](/lab/communication/).
 
 ### Lab citizenship (5%)
 

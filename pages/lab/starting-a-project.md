@@ -21,7 +21,7 @@ Before writing substantial code or math, set up the project infrastructure. This
 ### The Project Landing Page
 
 * **Top-level goal:** one crisp sentence.
-* **DRI (Directly Responsible Individual):** lead PhD student or postdoc.
+* **DRI (Directly Responsible Individual):** lead PhD student or postdoc — the person who owns and drives the project; [Lab Expectations](/lab/expectations/) describes the role.
 * **PI / high-level strategy:** Walter Dempsey.
 * **Primary communication:** the project-specific Slack channel (e.g., `#project-analysis`).
 * **Code repository:** link to GitHub.
@@ -37,7 +37,7 @@ Research is unpredictable, so we frame milestones as probabilistic targets rathe
 
 #### Top open questions & risks
 
-A ranked list of the biggest uncertainties that need to be de-risked. This list, more than the milestones, determines what we work on next.
+A ranked list of the biggest uncertainties that need to be de-risked — resolved cheaply and early, before they can quietly sink the project (Phase 2 below). This list, more than the milestones, determines what we work on next.
 
 ## Phase 2: The research loop
 

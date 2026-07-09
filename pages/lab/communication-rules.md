@@ -12,13 +12,13 @@ Clear communication keeps our meetings focused on strategy rather than logistica
 
 ## Weekly updates
 
-Every Friday, write a short update in your Project Landing Page, then send it as a brief email to the lab list with a link back to the doc. The doc is the archive; the email is the broadcast. Focus on what was accomplished or *learned*, not what was worked on. The template (traffic-light status adapted from Ben Kuhn's [notes on project management](https://www.benkuhn.net/pjm/)):
+Every Friday, write a short update in your Project Landing Page — the project's Google Doc that serves as its single source of truth ([Starting a Project](/lab/starting-a-project/) shows the full structure) — then send it as a brief email to the lab list with a link back to the doc. The doc is the archive; the email is the broadcast. Focus on what was accomplished or *learned*, not what was worked on. The template (traffic-light status adapted from Ben Kuhn's [notes on project management](https://www.benkuhn.net/pjm/)):
 
 ### Week of [date]
 
 * **Status:** 🟢 on track / 🟡 at risk / 🔴 blocked
 * **What changed / what we learned:** two to four bullets of key findings or decisions.
-* **Up next:** the next de-risking step.
+* **Up next:** the next de-risking step — the task that attacks your biggest remaining uncertainty (see the research loop in [Starting a Project](/lab/starting-a-project/)).
 * **Landing page:** [link]
 
 Put the traffic light in the email's subject line (e.g., `[Project name] — week of [date] 🟢`) — it lets everyone triage the inbox at a glance, and a 🔴 subject gets a same-day response. And remember the bullets state what was *learned*, not what was worked on: "ran simulations" is not an update; "the estimator is biased when cluster sizes are informative" is.

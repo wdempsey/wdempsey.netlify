@@ -1,8 +1,8 @@
 ---
 layout: contact
-title: 
-date: 2020-11-20 
-pgp: true 
+title:
+date: 2026-07-09
+pgp: false
 ---
 
-Feel free to reach out to me on <a href="https://twitter.com/walthdempsey" class="highlighted">Twitter</a> , or <a href="https://www.linkedin.com/in/walter-dempsey-88a82688/" class="highlighted">Linkedin</a>. You can also send me a message through the netlify form api below. If needed, you can use the button below to copy my public PGP key 
+The form below is the best way to reach me — messages come straight to my inbox. You can also find me on <a href="https://twitter.com/walthdempsey" class="highlighted">Twitter</a> or <a href="https://www.linkedin.com/in/walter-dempsey-88a82688/" class="highlighted">LinkedIn</a>. Prospective students: please mention which lab project or paper caught your interest.

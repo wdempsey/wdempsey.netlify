@@ -1,0 +1,267 @@
+{
+  "name": "Lab Quarterly Check-Ins",
+  "nodes": [
+    {
+      "parameters": {
+        "content": "## Lab Quarterly Check-Ins\n\nThree branches:\n1. **Kickoff** (1st of Jan/Apr/Jul/Oct, 9am): DM every active lab member the check-in form link and log a tracking row.\n2. **Submission watcher**: a new file in the Drive submissions folder marks the student as submitted and notifies Walter.\n3. **Weekly sweep** (Mondays 9am): remind anyone outstanding after 5 days; escalate a summary to Walter after 14 days.\n\n### Setup (see automation/README.md)\n1. Create a Google Sheet with tabs `Roster` (Name, SlackUserId, Email, Active) and `Tracking` (Name, Quarter, PingedAt, Submitted, SubmittedAt).\n2. Replace YOUR_TRACKING_SHEET_ID and YOUR_DRIVE_FOLDER_ID below.\n3. Replace WALTER_SLACK_ID with your Slack member ID.\n4. Attach Slack + Google credentials to each node.\n5. Submission filename convention: `lastname_2026Q3.pdf` (first token matched against Roster Name, case-insensitive).",
+        "height": 420,
+        "width": 420
+      },
+      "id": "note1",
+      "name": "Setup Notes",
+      "type": "n8n-nodes-base.stickyNote",
+      "typeVersion": 1,
+      "position": [-660, -60]
+    },
+    {
+      "parameters": {
+        "rule": {
+          "interval": [
+            {
+              "field": "cronExpression",
+              "expression": "0 9 1 1,4,7,10 *"
+            }
+          ]
+        }
+      },
+      "id": "trig_kickoff",
+      "name": "Quarterly Kickoff",
+      "type": "n8n-nodes-base.scheduleTrigger",
+      "typeVersion": 1.2,
+      "position": [-200, -200]
+    },
+    {
+      "parameters": {
+        "operation": "read",
+        "documentId": { "__rl": true, "value": "YOUR_TRACKING_SHEET_ID", "mode": "id" },
+        "sheetName": { "__rl": true, "value": "Roster", "mode": "name" },
+        "options": {}
+      },
+      "id": "sheets_roster",
+      "name": "Read Roster",
+      "type": "n8n-nodes-base.googleSheets",
+      "typeVersion": 4.5,
+      "position": [0, -200]
+    },
+    {
+      "parameters": {
+        "jsCode": "const now = new Date();\nconst q = Math.floor(now.getMonth() / 3) + 1;\nconst quarter = `${now.getFullYear()} Q${q}`;\nreturn $input.all()\n  .filter(i => String(i.json.Active).toUpperCase() === 'TRUE' || i.json.Active === true)\n  .map(i => ({ json: { ...i.json, Quarter: quarter, PingedAt: now.toISOString() } }));"
+      },
+      "id": "code_quarter",
+      "name": "Active Members + Quarter",
+      "type": "n8n-nodes-base.code",
+      "typeVersion": 2,
+      "position": [200, -200]
+    },
+    {
+      "parameters": {
+        "resource": "message",
+        "operation": "post",
+        "select": "user",
+        "user": { "__rl": true, "value": "={{ $json.SlackUserId }}", "mode": "id" },
+        "text": "=:wave: Hi {{ $json.Name.split(' ')[0] }} — it's quarterly check-in time ({{ $json.Quarter }}).\n\nGrab the form here: https://wdempsey.netlify.app/assets/pdf/quarterly-checkin.pdf\n\nIt should take ~10 minutes: status vs. your annual goals, what you learned, next quarter's top priority, blockers, and what you need from me. Upload the completed PDF to the *Quarterly Check-Ins* Drive folder as `lastname_{{ $json.Quarter.replace(' ', '') }}.pdf` within two weeks — we'll discuss it at our next 1:1.",
+        "otherOptions": {}
+      },
+      "id": "slack_ping",
+      "name": "Send Check-In DM",
+      "type": "n8n-nodes-base.slack",
+      "typeVersion": 2.2,
+      "position": [400, -200]
+    },
+    {
+      "parameters": {
+        "operation": "append",
+        "documentId": { "__rl": true, "value": "YOUR_TRACKING_SHEET_ID", "mode": "id" },
+        "sheetName": { "__rl": true, "value": "Tracking", "mode": "name" },
+        "columns": {
+          "mappingMode": "defineBelow",
+          "value": {
+            "Name": "={{ $json.Name }}",
+            "Quarter": "={{ $json.Quarter }}",
+            "PingedAt": "={{ $json.PingedAt }}",
+            "Submitted": "FALSE",
+            "SubmittedAt": ""
+          }
+        },
+        "options": {}
+      },
+      "id": "sheets_log",
+      "name": "Log Ping",
+      "type": "n8n-nodes-base.googleSheets",
+      "typeVersion": 4.5,
+      "position": [600, -200]
+    },
+    {
+      "parameters": {
+        "event": "fileCreated",
+        "triggerOn": "specificFolder",
+        "folderToWatch": { "__rl": true, "value": "YOUR_DRIVE_FOLDER_ID", "mode": "id" },
+        "options": {}
+      },
+      "id": "trig_drive",
+      "name": "Watch Submissions Folder",
+      "type": "n8n-nodes-base.googleDriveTrigger",
+      "typeVersion": 1,
+      "position": [-200, 60]
+    },
+    {
+      "parameters": {
+        "jsCode": "// Parse `lastname_2026Q3.pdf` and normalize\nconst out = [];\nfor (const item of $input.all()) {\n  const fname = item.json.name || '';\n  const m = fname.toLowerCase().match(/^([a-z\\-]+)_(\\d{4}q[1-4])/i);\n  out.push({ json: {\n    fileName: fname,\n    matchKey: m ? m[1] : null,\n    quarter: m ? m[2].toUpperCase().replace('Q', ' Q') : null,\n    submittedAt: new Date().toISOString()\n  }});\n}\nreturn out;"
+      },
+      "id": "code_match",
+      "name": "Parse Filename",
+      "type": "n8n-nodes-base.code",
+      "typeVersion": 2,
+      "position": [0, 60]
+    },
+    {
+      "parameters": {
+        "operation": "update",
+        "documentId": { "__rl": true, "value": "YOUR_TRACKING_SHEET_ID", "mode": "id" },
+        "sheetName": { "__rl": true, "value": "Tracking", "mode": "name" },
+        "columns": {
+          "mappingMode": "defineBelow",
+          "matchingColumns": ["Name", "Quarter"],
+          "value": {
+            "Name": "={{ $json.matchKey }}",
+            "Quarter": "={{ $json.quarter }}",
+            "Submitted": "TRUE",
+            "SubmittedAt": "={{ $json.submittedAt }}"
+          }
+        },
+        "options": {}
+      },
+      "id": "sheets_mark",
+      "name": "Mark Submitted",
+      "type": "n8n-nodes-base.googleSheets",
+      "typeVersion": 4.5,
+      "position": [200, 60]
+    },
+    {
+      "parameters": {
+        "resource": "message",
+        "operation": "post",
+        "select": "user",
+        "user": { "__rl": true, "value": "WALTER_SLACK_ID", "mode": "id" },
+        "text": "=:inbox_tray: Quarterly check-in received: *{{ $json.fileName }}* ({{ $json.quarter }}). Marked as submitted in the tracking sheet.",
+        "otherOptions": {}
+      },
+      "id": "slack_received",
+      "name": "Notify Walter (Received)",
+      "type": "n8n-nodes-base.slack",
+      "typeVersion": 2.2,
+      "position": [400, 60]
+    },
+    {
+      "parameters": {
+        "rule": {
+          "interval": [
+            {
+              "field": "cronExpression",
+              "expression": "0 9 * * 1"
+            }
+          ]
+        }
+      },
+      "id": "trig_sweep",
+      "name": "Weekly Reminder Sweep",
+      "type": "n8n-nodes-base.scheduleTrigger",
+      "typeVersion": 1.2,
+      "position": [-200, 320]
+    },
+    {
+      "parameters": {
+        "operation": "read",
+        "documentId": { "__rl": true, "value": "YOUR_TRACKING_SHEET_ID", "mode": "id" },
+        "sheetName": { "__rl": true, "value": "Tracking", "mode": "name" },
+        "options": {}
+      },
+      "id": "sheets_tracking",
+      "name": "Read Tracking",
+      "type": "n8n-nodes-base.googleSheets",
+      "typeVersion": 4.5,
+      "position": [0, 320]
+    },
+    {
+      "parameters": {
+        "jsCode": "// Outstanding = current quarter, not submitted. Classify by days since ping.\nconst now = new Date();\nconst q = `${now.getFullYear()} Q${Math.floor(now.getMonth() / 3) + 1}`;\nconst remind = [], escalate = [];\nfor (const item of $input.all()) {\n  const j = item.json;\n  if (j.Quarter !== q) continue;\n  if (String(j.Submitted).toUpperCase() === 'TRUE') continue;\n  const days = (now - new Date(j.PingedAt)) / 86400000;\n  if (days >= 14) escalate.push(j.Name);\n  else if (days >= 5) remind.push(j);\n}\nconst out = remind.map(j => ({ json: { ...j, branch: 'remind' } }));\nif (escalate.length) out.push({ json: { branch: 'escalate', names: escalate.join(', '), quarter: q } });\nreturn out;"
+      },
+      "id": "code_outstanding",
+      "name": "Find Outstanding",
+      "type": "n8n-nodes-base.code",
+      "typeVersion": 2,
+      "position": [200, 320]
+    },
+    {
+      "parameters": {
+        "conditions": {
+          "options": { "caseSensitive": true, "typeValidation": "strict" },
+          "conditions": [
+            {
+              "leftValue": "={{ $json.branch }}",
+              "rightValue": "escalate",
+              "operator": { "type": "string", "operation": "equals" }
+            }
+          ],
+          "combinator": "and"
+        },
+        "options": {}
+      },
+      "id": "if_escalate",
+      "name": "Escalation?",
+      "type": "n8n-nodes-base.if",
+      "typeVersion": 2,
+      "position": [400, 320]
+    },
+    {
+      "parameters": {
+        "resource": "message",
+        "operation": "post",
+        "select": "user",
+        "user": { "__rl": true, "value": "WALTER_SLACK_ID", "mode": "id" },
+        "text": "=:rotating_light: Quarterly check-ins outstanding >14 days ({{ $json.quarter }}): {{ $json.names }}. Worth a personal nudge at your next 1:1.",
+        "otherOptions": {}
+      },
+      "id": "slack_escalate",
+      "name": "Escalate to Walter",
+      "type": "n8n-nodes-base.slack",
+      "typeVersion": 2.2,
+      "position": [620, 240]
+    },
+    {
+      "parameters": {
+        "resource": "message",
+        "operation": "post",
+        "select": "user",
+        "user": { "__rl": true, "value": "={{ $json.SlackUserId }}", "mode": "id" },
+        "text": "=:hourglass_flowing_sand: Friendly reminder — your quarterly check-in ({{ $json.Quarter }}) is still open. Form: https://wdempsey.netlify.app/assets/pdf/quarterly-checkin.pdf — upload to the *Quarterly Check-Ins* Drive folder when done. It's ~10 minutes, and it makes our next 1:1 better.",
+        "otherOptions": {}
+      },
+      "id": "slack_remind",
+      "name": "Remind Student",
+      "type": "n8n-nodes-base.slack",
+      "typeVersion": 2.2,
+      "position": [620, 400]
+    }
+  ],
+  "connections": {
+    "Quarterly Kickoff": { "main": [[{ "node": "Read Roster", "type": "main", "index": 0 }]] },
+    "Read Roster": { "main": [[{ "node": "Active Members + Quarter", "type": "main", "index": 0 }]] },
+    "Active Members + Quarter": { "main": [[{ "node": "Send Check-In DM", "type": "main", "index": 0 }]] },
+    "Send Check-In DM": { "main": [[{ "node": "Log Ping", "type": "main", "index": 0 }]] },
+    "Watch Submissions Folder": { "main": [[{ "node": "Parse Filename", "type": "main", "index": 0 }]] },
+    "Parse Filename": { "main": [[{ "node": "Mark Submitted", "type": "main", "index": 0 }]] },
+    "Mark Submitted": { "main": [[{ "node": "Notify Walter (Received)", "type": "main", "index": 0 }]] },
+    "Weekly Reminder Sweep": { "main": [[{ "node": "Read Tracking", "type": "main", "index": 0 }]] },
+    "Read Tracking": { "main": [[{ "node": "Find Outstanding", "type": "main", "index": 0 }]] },
+    "Find Outstanding": { "main": [[{ "node": "Escalation?", "type": "main", "index": 0 }]] },
+    "Escalation?": {
+      "main": [
+        [{ "node": "Escalate to Walter", "type": "main", "index": 0 }],
+        [{ "node": "Remind Student", "type": "main", "index": 0 }]
+      ]
+    }
+  },
+  "settings": { "executionOrder": "v1" },
+  "pinData": {}
+}
