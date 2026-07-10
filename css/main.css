@@ -716,3 +716,20 @@ $font-family: Proxima, Helvetica, Arial, sans-serif;
 html {
   font-size: 18px;
 }
+
+/* In-content links: visible without hover. Scoped to .card-body because
+   the layouts wrap markdown in <p class="card-text">, and browsers eject
+   block elements (headings, lists) out of that <p>, so the existing
+   .card-text a rule misses most content. Excludes styled link classes. */
+.card-body a:not(.highlighted):not(.btn):not(.badge):not(.nav-link),
+.blogcard a:not(.highlighted):not(.btn):not(.badge) {
+  color: #0a5c8c;
+  text-decoration: underline;
+  text-decoration-color: rgba(10, 92, 140, 0.4);
+  text-underline-offset: 2px;
+}
+.card-body a:not(.highlighted):not(.btn):not(.badge):not(.nav-link):hover,
+.blogcard a:not(.highlighted):not(.btn):not(.badge):hover {
+  color: #063a59;
+  text-decoration-color: currentColor;
+}
