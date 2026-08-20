@@ -29,7 +29,13 @@ The single source of truth for project state: goal, milestones, open risks, and 
 
 ## Overleaf
 
-Mathematical formulations, estimand definitions, and eventually the manuscript live in Overleaf from day one. Use the shared lab notation preamble (`lab-notation.sty`, shipped in the template repo's `writing/` folder) so symbols mean the same thing across projects. Where the license supports it, link the Overleaf project to the repo's `writing/` directory via GitHub sync; otherwise, Overleaf is canonical and the repo README links to it.
+Mathematical formulations, estimand definitions, and eventually the manuscript live in Overleaf from day one. Use the shared lab notation preamble (`lab-notation.sty`, shipped in the template repo's `writing/` folder) so symbols mean the same thing across projects. Treat Overleaf as the canonical writing workspace and sync its contents into the repo's `writing/` directory with Git subtree:
+
+```bash
+git subtree pull --prefix=writing overleaf main
+```
+
+The repo README should still link to the Overleaf project so anyone landing on the repo knows where the live writing workspace is.
 
 ## Slack
 
