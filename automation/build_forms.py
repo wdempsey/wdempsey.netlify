@@ -117,7 +117,7 @@ class FormDoc:
             x=ML, y=self.y - height, width=USABLE, height=height,
             borderColor=BORDER, fillColor=LIGHT, textColor=black,
             fontName="Helvetica", fontSize=9, borderWidth=0.75,
-            fieldFlags="multiline", forceBorder=True)
+            fieldFlags="multiline", maxlen=0, forceBorder=True)
         self.y -= height + 10
 
     def line(self, label, width=None, label_w=None):
@@ -132,6 +132,7 @@ class FormDoc:
             x=ML + lw, y=self.y - 16, width=fw, height=16,
             borderColor=BORDER, fillColor=LIGHT, textColor=black,
             fontName="Helvetica", fontSize=9, borderWidth=0.75,
+            maxlen=0,
             forceBorder=True)
         self.y -= 24
 
@@ -146,7 +147,8 @@ class FormDoc:
             name=self.name("f"), tooltip=l1[:100],
             x=ML + w1, y=self.y - 16, width=col1 - w1 - 12, height=16,
             borderColor=BORDER, fillColor=LIGHT, textColor=black,
-            fontName="Helvetica", fontSize=9, borderWidth=0.75, forceBorder=True)
+            fontName="Helvetica", fontSize=9, borderWidth=0.75,
+            maxlen=0, forceBorder=True)
         x2 = ML + col1
         w2 = self.c.stringWidth(l2, "Helvetica-Bold", 9) + 8
         self.c.drawString(x2, self.y - 12, l2)
@@ -154,7 +156,8 @@ class FormDoc:
             name=self.name("f"), tooltip=l2[:100],
             x=x2 + w2, y=self.y - 16, width=USABLE - col1 - w2, height=16,
             borderColor=BORDER, fillColor=LIGHT, textColor=black,
-            fontName="Helvetica", fontSize=9, borderWidth=0.75, forceBorder=True)
+            fontName="Helvetica", fontSize=9, borderWidth=0.75,
+            maxlen=0, forceBorder=True)
         self.y -= 24
 
     def checks(self, label, options, note=None):
@@ -225,7 +228,8 @@ class FormDoc:
                 name=self.name("date"), tooltip=f"{role} date",
                 x=x + 30, y=self.y - 52, width=100, height=14,
                 borderColor=BORDER, fillColor=LIGHT, textColor=black,
-                fontName="Helvetica", fontSize=9, borderWidth=0.75, forceBorder=True)
+                fontName="Helvetica", fontSize=9, borderWidth=0.75,
+                maxlen=0, forceBorder=True)
         self.y -= 60
 
     def save(self):
