@@ -8,7 +8,7 @@ permalink: /lab/communication/
 
 <h1 class="mx-auto" style="font-family:Courgette;">{{ page.title }}</h1>
 
-Clear communication keeps our meetings focused on strategy rather than logistical untangling. Companion pages: [Lab Expectations](/lab/expectations/) and [Starting a Project](/lab/starting-a-project/).
+Clear communication keeps our meetings focused on strategy rather than logistical untangling. Companion pages: [DRI Expectations](/lab/expectations/) and [Starting a Project](/lab/starting-a-project/).
 
 ## Weekly updates
 

@@ -1,6 +1,6 @@
 ---
 layout: page
-title: "Lab Expectations: Operating as a DRI"
+title: "Lab Expectations: Your Role as a DRI"
 permalink: /lab/expectations/
 ---
 
@@ -8,7 +8,7 @@ permalink: /lab/expectations/
 
 <h1 class="mx-auto" style="font-family:Courgette;">{{ page.title }}</h1>
 
-This page describes what successful project ownership looks like in the lab. The framing is adapted from Ethan Perez's [tips for empirical alignment research](https://www.lesswrong.com/posts/dZFpEdKyb9Bf4xYn7/tips-for-empirical-alignment-research) — a rubric built for a high-throughput empirical ML organization — modified for a methodological research environment, where correctness and understanding carry more weight than experiment volume. Companion pages: [Starting a Project](/lab/starting-a-project/) and [Communication Rules](/lab/communication/).
+This is not the general introduction to the lab; start with the [Lab Overview](/lab/overview/) for that. This page describes what successful project ownership looks like when you serve as a DRI. The framing is adapted from Ethan Perez's [tips for empirical alignment research](https://www.lesswrong.com/posts/dZFpEdKyb9Bf4xYn7/tips-for-empirical-alignment-research) — a rubric built for a high-throughput empirical ML organization — modified for a methodological research environment, where correctness and understanding carry more weight than experiment volume. Companion pages: [Starting a Project](/lab/starting-a-project/) and [Communication Rules](/lab/communication/).
 
 By roughly the one-year mark, the goal is for you to operate as the **Directly Responsible Individual (DRI)** for your research projects: the person who moves the work forward, tracks progress, and identifies roadblocks. No one arrives as a DRI, and you are not expected to. In your first year, most tactical direction will come from me; the handoff is gradual, and we will discuss where you are in it explicitly during 1:1s.
 

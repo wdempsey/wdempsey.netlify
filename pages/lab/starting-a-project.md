@@ -8,7 +8,7 @@ permalink: /lab/starting-a-project/
 
 <h1 class="mx-auto" style="font-family:Courgette;">{{ page.title }}</h1>
 
-Starting a new project means putting structure around uncertainty. We separate the one-time initialization from the ongoing phases of research. Companion pages: [Lab Expectations](/lab/expectations/) and [Communication Rules](/lab/communication/).
+Starting a new project means putting structure around uncertainty. We separate the one-time initialization from the ongoing phases of research. Companion pages: [DRI Expectations](/lab/expectations/) and [Communication Rules](/lab/communication/).
 
 ## Phase 1: Initialization
 
@@ -21,7 +21,7 @@ Before writing substantial code or math, set up the project infrastructure. This
 ### The Project Landing Page
 
 * **Top-level goal:** one crisp sentence.
-* **DRI (Directly Responsible Individual):** lead PhD student or postdoc — the person who owns and drives the project; [Lab Expectations](/lab/expectations/) describes the role.
+* **DRI (Directly Responsible Individual):** lead PhD student or postdoc — the person who owns and drives the project; [DRI Expectations](/lab/expectations/) describes the role.
 * **PI / high-level strategy:** Walter Dempsey.
 * **Primary communication:** the project-specific Slack channel (e.g., `#project-analysis`).
 * **Code repository:** link to GitHub.

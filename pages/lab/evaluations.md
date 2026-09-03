@@ -8,7 +8,7 @@ permalink: /lab/evaluations/
 
 <h1 class="mx-auto" style="font-family:Courgette;">{{ page.title }}</h1>
 
-Feedback in the lab runs on two clocks. Weekly updates ([Communication Rules](/lab/communication/)) keep projects moving; the annual review and quarterly check-ins described here keep *you* moving — toward candidacy, graduation, or the job market. The forms below are deliberately tied to the [Lab Expectations](/lab/expectations/) rubric: the annual review asks you to self-assess against the same DRI categories we use all year, so nothing in it should come as a surprise.
+Feedback in the lab runs on two clocks. Weekly updates ([Communication Rules](/lab/communication/)) keep projects moving; the annual review and quarterly check-ins described here keep *you* moving — toward candidacy, graduation, or the job market. The forms below are deliberately tied to the [DRI Expectations](/lab/expectations/) rubric: the annual review asks you to self-assess against the same DRI categories we use all year, so nothing in it should come as a surprise.
 
 ## Annual review
 
